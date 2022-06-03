@@ -1,0 +1,9 @@
+rootProject.name = 'octo-ms-intro'
+
+include 'model'
+include 'demo'
+include 'dto'
+include 'mm-mapper'
+include 'ms-mapper'
+include 'infra-mapper'
+

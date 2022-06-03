@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'com.aradiuk.octomsintro'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':infra-mapper')
+    compileOnly 'org.springframework:spring-context-support:5.3.20'
+}
+
+test {
+    useJUnitPlatform()
+}
