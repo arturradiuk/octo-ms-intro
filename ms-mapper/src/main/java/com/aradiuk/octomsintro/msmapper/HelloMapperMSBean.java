@@ -4,7 +4,7 @@ import com.aradiuk.octomsintro.inframapper.HelloMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HelloMapperMS implements HelloMapper {
+class HelloMapperMSBean implements HelloMapper {
 
     @Override
     public String map() {

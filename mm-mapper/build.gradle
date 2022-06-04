@@ -12,7 +12,10 @@ repositories {
 dependencies {
     implementation project(':infra-mapper')
     implementation project(':model')
+    implementation project(':dto')
     compileOnly 'org.springframework:spring-context-support:5.3.20'
+
+    implementation 'org.modelmapper:modelmapper:3.0.0'
 }
 test {
     useJUnitPlatform()
