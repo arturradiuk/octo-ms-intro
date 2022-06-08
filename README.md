@@ -19,10 +19,14 @@
 # Resources
 
 [MapStruct html reference](https://mapstruct.org/documentation/stable/reference/html)
+
 [MapStruct pdf reference](https://mapstruct.org/documentation/stable/reference/pdf/mapstruct-reference-guide.pdf)
+
 [more mapper libs comparison](https://www.baeldung.com/java-performance-mapping-frameworks)
 
+
 https://medium.com/globant/mapstruct-advanced-concepts-and-dependency-injection-46f28af54e33
+
 https://github.com/j-easy/easy-random/wiki
-https://www.baeldung.com/jmeter
+
 https://medium.com/uphill-engineering-design/deep-dive-into-mapstruct-spring-7ddd8dac3d6d
