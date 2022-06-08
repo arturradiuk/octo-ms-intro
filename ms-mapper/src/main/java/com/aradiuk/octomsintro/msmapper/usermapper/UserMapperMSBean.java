@@ -4,6 +4,7 @@ import com.aradiuk.octomsintro.dto.UserBaseInfoDto;
 import com.aradiuk.octomsintro.dto.UserDto;
 import com.aradiuk.octomsintro.inframapper.UserMapper;
 import com.aradiuk.octomsintro.model.User;
+import com.aradiuk.octomsintro.msmapper.CycleAvoidingMappingContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +32,6 @@ class UserMapperMSBean implements UserMapper {
 
     @Override
     public UserDto map(User user) {
-        return mapperMS.map(user);
+        return mapperMS.map(user, new CycleAvoidingMappingContext());
     }
 }

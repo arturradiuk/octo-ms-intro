@@ -1,13 +1,15 @@
 package com.aradiuk.octomsintro.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class GroupDto {
     private String uuid;
     private String groupName;
     private String creationDateTime;
     private String lastUpdateDateTime;
     private char[] description;
-
+    @JsonIgnore
     private UserDto owner;
 
     public UserDto getOwner() {

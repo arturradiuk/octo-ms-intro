@@ -3,6 +3,7 @@ package com.aradiuk.octomsintro.msmapper.groupmapper;
 import com.aradiuk.octomsintro.dto.GroupDto;
 import com.aradiuk.octomsintro.dto.GroupSimpleDto;
 import com.aradiuk.octomsintro.model.Group;
+import com.aradiuk.octomsintro.msmapper.CycleAvoidingMappingContext;
 import org.mapstruct.*;
 
 import java.util.UUID;
@@ -22,8 +23,7 @@ public interface GroupMapperMS {
     @Mapping(target = "creationDateTime", dateFormat = "yyyy.MM.dd")
     @Mapping(target = "uuid", expression = "java(uuidToString(group.getId()))")
     @Mapping(target = "description", expression = "java(group.getDescription().toCharArray())")
-//    @Mapping(target = "owner", expression = "java(null)")
-    GroupDto map(Group group);
+    GroupDto map(Group group, @Context CycleAvoidingMappingContext cycleAvoidingMappingContext);
 
     @Mapping(target = "active", expression = "java((\"IS_\"+group.isActive()).toUpperCase())")
     @Mapping(target = "id", source = "id", qualifiedByName = "CategoryToString")
@@ -37,5 +37,9 @@ public interface GroupMapperMS {
 
     default String map(char[] value) {
         return new String(value);
+    }
+
+    default char[] map(String value) {
+        return value.toCharArray();
     }
 }

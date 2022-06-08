@@ -4,6 +4,7 @@ import com.aradiuk.octomsintro.dto.GroupDto;
 import com.aradiuk.octomsintro.dto.GroupSimpleDto;
 import com.aradiuk.octomsintro.inframapper.GroupMapper;
 import com.aradiuk.octomsintro.model.Group;
+import com.aradiuk.octomsintro.msmapper.CycleAvoidingMappingContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +25,7 @@ class GroupMapperMSBean implements GroupMapper {
 
     @Override
     public GroupDto map(Group group) {
-        return mapperMS.map(group);
+        return mapperMS.map(group, new CycleAvoidingMappingContext());
     }
 
     @Override

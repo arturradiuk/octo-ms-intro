@@ -3,6 +3,7 @@ package com.aradiuk.octomsintro.msmapper.usermapper;
 import com.aradiuk.octomsintro.dto.UserBaseInfoDto;
 import com.aradiuk.octomsintro.dto.UserDto;
 import com.aradiuk.octomsintro.model.User;
+import com.aradiuk.octomsintro.msmapper.CycleAvoidingMappingContext;
 import com.aradiuk.octomsintro.msmapper.groupmapper.GroupMapperMS;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
@@ -22,16 +23,13 @@ interface UserMapperMS {
     @Mapping(target = "creationDateTime", ignore = true)
     @Mapping(target = "lastUpdateDateTime", ignore = true)
     @Mapping(target = "group", ignore = true)
-        // todo here
     User map(UserBaseInfoDto userBaseInfoDto);
 
     @Mapping(target = "userType", ignore = true)
     @Mapping(target = "creationDateTime", ignore = true)
     @Mapping(target = "lastUpdateDateTime", ignore = true)
     User map(UserDto userDto);
-
-//    @Mapping(target = "group", expression = "java(null)")
-    UserDto map(User user);
+    UserDto map(User user, @Context CycleAvoidingMappingContext cycleAvoidingMappingContext);
 
 
     @InheritInverseConfiguration

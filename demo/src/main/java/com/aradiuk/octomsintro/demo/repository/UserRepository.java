@@ -1,5 +1,6 @@
 package com.aradiuk.octomsintro.demo.repository;
 
+import com.aradiuk.octomsintro.model.Group;
 import com.aradiuk.octomsintro.model.User;
 import org.jeasy.random.EasyRandom;
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,11 @@ public class UserRepository {
 
     public User getRandomUser() {
         EasyRandom easyRandom = new EasyRandom();
-        return easyRandom.nextObject(User.class);
+        User user = easyRandom.nextObject(User.class);
+        user.setUsername("aradiuk");
+        Group group = easyRandom.nextObject(Group.class);
+        group.setGroupName("First group");
+        user.setGroup(group);
+        return user;
     }
 }

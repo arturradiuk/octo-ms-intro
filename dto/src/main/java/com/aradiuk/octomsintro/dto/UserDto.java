@@ -1,5 +1,7 @@
 package com.aradiuk.octomsintro.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.UUID;
 
 public class UserDto {
