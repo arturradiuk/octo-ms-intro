@@ -1,0 +1,3 @@
+server:
+  servlet:
+    context-path: /octo-ms-intro

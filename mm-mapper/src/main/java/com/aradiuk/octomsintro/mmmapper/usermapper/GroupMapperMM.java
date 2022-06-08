@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GroupMapperMM {
     @Bean
-    public ModelMapper groupMapper(){
+    public ModelMapper groupMapper() {
         return new ModelMapper();
     }
 }

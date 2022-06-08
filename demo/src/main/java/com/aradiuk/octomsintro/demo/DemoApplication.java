@@ -11,12 +11,12 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.aradiuk.octomsintro")
 public class DemoApplication implements CommandLineRunner {
 
+    @Autowired
+    private HelloMapper helloMapper;
+
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
-
-    @Autowired
-    private HelloMapper helloMapper;
 
     @Override
     public void run(String... args) {

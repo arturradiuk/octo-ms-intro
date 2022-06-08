@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class UserMapperMM {
     @Bean
-    public ModelMapper userMapper(){
+    public ModelMapper userMapper() {
         return new ModelMapper();
     }
 }

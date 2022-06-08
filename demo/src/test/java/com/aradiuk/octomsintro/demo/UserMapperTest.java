@@ -13,13 +13,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 class UserMapperTest {
 
     private final EasyRandom easyRandom;
+    @Autowired
+    private UserMapper userMapper;
 
     UserMapperTest() {
         easyRandom = new EasyRandom();
     }
-
-    @Autowired
-    private UserMapper userMapper;
 
     @Test
     void givenUser_whenMapCalled_thenUserBaseInfoDto() {

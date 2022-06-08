@@ -1,16 +1,51 @@
 package com.aradiuk.octomsintro.dto;
 
 
-import java.time.LocalDateTime;
-import java.util.List;
-
 public class GroupDto {
     private String uuid;
+    private String groupName;
     private String creationDateTime;
-    private LocalDateTime lastUpdateDateTime;
+    private String lastUpdateDateTime;
     private char[] description;
-    private List<UserDto> users; // cyclic reference
-    private String active;
-    private UserDto userDtoOwner;
-    private String royalty;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getCreationDateTime() {
+        return creationDateTime;
+    }
+
+    public void setCreationDateTime(String creationDateTime) {
+        this.creationDateTime = creationDateTime;
+    }
+
+    public String getLastUpdateDateTime() {
+        return lastUpdateDateTime;
+    }
+
+    public void setLastUpdateDateTime(String lastUpdateDateTime) {
+        this.lastUpdateDateTime = lastUpdateDateTime;
+    }
+
+    public char[] getDescription() {
+        return description;
+    }
+
+    public void setDescription(char[] description) {
+        this.description = description;
+    }
+
 }

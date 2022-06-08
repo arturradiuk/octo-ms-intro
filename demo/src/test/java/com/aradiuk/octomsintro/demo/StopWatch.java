@@ -4,15 +4,15 @@ import java.time.Duration;
 import java.time.Instant;
 
 public class StopWatch {
+    public Instant finish;
+    private Instant start;
+
     private StopWatch() {
     }
 
     public static StopWatch instance() {
         return new StopWatch();
     }
-
-    private Instant start;
-    public Instant finish;
 
     public void start() {
         if (start != null) {
