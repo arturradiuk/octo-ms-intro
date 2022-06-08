@@ -7,6 +7,15 @@ public class UserDto {
     private String firstName;
     private String secondName;
     private String username;
+    private GroupDto group;
+
+    public GroupDto getGroup() {
+        return group;
+    }
+
+    public void setGroup(GroupDto group) {
+        this.group = group;
+    }
 
     public UUID getId() {
         return id;

@@ -11,8 +11,9 @@ public class Group {
     private LocalDateTime lastUpdateDateTime;
     private String description;
     private boolean active;
-    private User owner;
     private BigDecimal royalty;
+
+    private User owner;
 
     public UUID getId() {
         return id;

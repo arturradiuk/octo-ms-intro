@@ -8,6 +8,16 @@ public class GroupDto {
     private String lastUpdateDateTime;
     private char[] description;
 
+    private UserDto owner;
+
+    public UserDto getOwner() {
+        return owner;
+    }
+
+    public void setOwner(UserDto owner) {
+        this.owner = owner;
+    }
+
     public String getUuid() {
         return uuid;
     }

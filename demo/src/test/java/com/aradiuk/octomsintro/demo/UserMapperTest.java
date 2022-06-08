@@ -26,7 +26,7 @@ class UserMapperTest {
         User randomUser = easyRandom.nextObject(User.class);
 
         //when
-        UserBaseInfoDto mappedDto = userMapper.map(randomUser);
+        UserBaseInfoDto mappedDto = userMapper.mapToBase(randomUser);
 
         //then
         Assertions.assertThat(randomUser.getFirstName()).isEqualTo(mappedDto.getFirstName());
@@ -44,7 +44,7 @@ class UserMapperTest {
         stopWatch.start();
 
         for (int i = 0; i < 10_000_000; i++) {
-            UserBaseInfoDto mappedDto = userMapper.map(randomUser);
+            UserBaseInfoDto mappedDto = userMapper.mapToBase(randomUser);
             // 1_000_000_000: ms = 8821 millis. mm = infinity
             // 10_000_000: ms = 109 millis millis. mm = 7496 millis
         }

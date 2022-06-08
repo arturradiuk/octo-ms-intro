@@ -21,6 +21,8 @@ interface UserMapperMS {
     @Mapping(target = "userType", ignore = true)
     @Mapping(target = "creationDateTime", ignore = true)
     @Mapping(target = "lastUpdateDateTime", ignore = true)
+    @Mapping(target = "group", ignore = true)
+        // todo here
     User map(UserBaseInfoDto userBaseInfoDto);
 
     @Mapping(target = "userType", ignore = true)
@@ -28,6 +30,10 @@ interface UserMapperMS {
     @Mapping(target = "lastUpdateDateTime", ignore = true)
     User map(UserDto userDto);
 
+//    @Mapping(target = "group", expression = "java(null)")
+    UserDto map(User user);
+
+
     @InheritInverseConfiguration
-    UserBaseInfoDto map(User user);
+    UserBaseInfoDto mapToBase(User user);
 }

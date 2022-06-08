@@ -2,6 +2,7 @@ package com.aradiuk.octomsintro.demo.controller;
 
 import com.aradiuk.octomsintro.demo.repository.UserRepository;
 import com.aradiuk.octomsintro.dto.UserBaseInfoDto;
+import com.aradiuk.octomsintro.dto.UserDto;
 import com.aradiuk.octomsintro.inframapper.UserMapper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +22,22 @@ public class UserController {
     }
 
     @GetMapping
-    List<UserBaseInfoDto> getAllUsers() {
+    List<UserDto> getAllUsers() {
         return userRepository.getAllUsers().stream().map(userMapper::map).toList();
     }
 
     @GetMapping("random")
-    UserBaseInfoDto getRandomUser() {
+    UserDto getRandomUser() {
         return userMapper.map(userRepository.getRandomUser());
+    }
+
+    @GetMapping("base/random")
+    UserBaseInfoDto getRandomBaseUser() {
+        return userMapper.mapToBase(userRepository.getRandomUser());
+    }
+
+    @GetMapping("base")
+    List<UserBaseInfoDto> getAllBaseUsers() {
+        return userRepository.getAllUsers().stream().map(userMapper::mapToBase).toList();
     }
 }

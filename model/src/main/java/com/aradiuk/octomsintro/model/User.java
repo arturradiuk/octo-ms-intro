@@ -11,6 +11,15 @@ public class User {
     private UserType userType;
     private LocalDateTime creationDateTime;
     private LocalDateTime lastUpdateDateTime;
+    private Group group;
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 
     public User(String username, String firstName, String secondName) {
         this.username = username;
